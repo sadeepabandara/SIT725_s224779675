@@ -1,20 +1,23 @@
 const express = require('express');
+const path = require('path');
 const app = express();
+const PORT = process.env.PORT || 3000;
 
-app.get('/', (req, res) => {
-    res.send('Welcome to my Express server for Task 2.2P task');
-});
+app.use(express.static(path.join(__dirname, 'public')));
 
-// Add two numbers: /add?num1=5&num2=7
+// GET endpoint: /add?a=5&b=7
 app.get('/add', (req, res) => {
-    const num1 = Number(req.query.num1);
-    const num2 = Number(req.query.num2);
+    const a = parseFloat(req.query.a);
+    const b = parseFloat(req.query.b);
 
-    const sum = num1 + num2;
+    if (isNaN(a) || isNaN(b)) {
+        return res.json({ error: 'Please enter valid numbers' });
+    }
 
-    res.send(`The answer is: ${sum}`);
+    const sum = a + b;
+    res.json({ result: sum });
 });
 
-app.listen(3000, () => {
-    console.log('Server is running on http://localhost:3000');
+app.listen(PORT, () => {
+    console.log(`Server running on http://localhost:${PORT}`);
 });
