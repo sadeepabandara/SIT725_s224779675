@@ -35,7 +35,6 @@ const submitForm = () => {
     const title = $('#p_title').val();
     const image = $('#p_image').val();
     const desc = $('#p_desc').val();
-    // Demo: just log — real app would POST to server
     console.log({ title, image, desc });
     M.toast({ html: 'Submitted (demo). Check console.' });
 };

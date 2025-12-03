@@ -8,7 +8,6 @@ app.use(express.urlencoded({ extended: false }));
 
 const PORT = process.env.PORT || 3000;
 
-// Example API - change or extend data as you like
 const plants = [
     {
         id: 1,
@@ -34,7 +33,6 @@ app.get('/api/plants', (req, res) => {
     res.json(plants);
 });
 
-// A simple REST example for single plant (optional)
 app.get('/api/plants/:id', (req, res) => {
     const id = Number(req.params.id);
     const p = plants.find((x) => x.id === id);
