@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>SIT725 - 3.2P Plants</title>
+
+        <!-- Materialize CSS -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+        />
+
+        <!-- Google icons -->
+        <link
+            href="https://fonts.googleapis.com/icon?family=Material+Icons"
+            rel="stylesheet"
+        />
+
+        <link rel="stylesheet" href="css/styles.css" />
+    </head>
+    <body>
+        <nav>
+            <div class="nav-wrapper container">
+                <a href="#" class="brand-logo">Plantopia</a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a href="#">SIT725</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <main class="main-body">
+            <div class="container">
+                <div class="row center-align">
+                    <h4>Welcome to Plants Gallery</h4>
+                    <p class="flow-text">
+                        This demo shows dynamic cards loaded from an Express
+                        API.
+                    </p>
+                    <a
+                        class="waves-effect waves-light btn modal-trigger"
+                        data-target="addModal"
+                        >Add Plant</a
+                    >
+                </div>
+
+                <div class="row" id="card-section">
+                    <!-- cards will be injected here -->
+                </div>
+            </div>
+
+            <!-- Modal (demo form) -->
+            <div id="addModal" class="modal">
+                <div class="modal-content">
+                    <h5>Add Plant</h5>
+                    <div class="row">
+                        <form class="col s12">
+                            <div class="row">
+                                <div class="input-field col s6">
+                                    <input id="p_title" type="text" />
+                                    <label for="p_title">Plant Title</label>
+                                </div>
+                                <div class="input-field col s6">
+                                    <input
+                                        id="p_image"
+                                        type="text"
+                                        placeholder="images/example.jpg"
+                                    />
+                                    <label for="p_image">Image path</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <textarea
+                                        id="p_desc"
+                                        class="materialize-textarea"
+                                    ></textarea>
+                                    <label for="p_desc">Description</label>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a class="modal-close waves-effect waves-green btn-flat"
+                        >Cancel</a
+                    >
+                    <a
+                        id="formSubmit"
+                        class="modal-close waves-effect waves-green btn"
+                        >Submit</a
+                    >
+                </div>
+            </div>
+        </main>
+
+        <!-- jQuery (Materialize requires it) -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <!-- Materialize JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <!-- App scripts -->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>
